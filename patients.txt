@@ -1,0 +1,4 @@
+{'name': 'd', 'age': 2, 'gender': 1}
+{'name': 'd', 'age': 23, 'gender': 1}
+{'name': 'd', 'age': 445, 'gender': 1}
+{'name': 'Dishn', 'age': 2, 'gender': 3}

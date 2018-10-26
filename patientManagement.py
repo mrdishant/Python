@@ -1,7 +1,6 @@
 class Patient:
 
-
-    def __init__(self,):
+    def __init__(self):
         self.name=None
         self.age=None
         self.gender=None
@@ -13,10 +12,21 @@ class Patient:
         print("Age : ",self.age)
         print("Gender : ",self.gender)
 
+    def getPatient(self):
+        return  ""+self.name+str(self.age)+str(self.gender)+"\n"   
+
 
 class PMSystem:
 
+    file=open("patients.txt","r+")      
+
     patients=list()
+
+    def __init__(self):
+        print("hello")
+        for line in PMSystem.file.readlines():
+            print(line)
+            PMSystem.patients.append(line)
 
     def addPatient(self):
         p1=Patient()
@@ -28,6 +38,8 @@ class PMSystem:
         p1.gender=int(input("Specify Gender 0 for Male 1 for Female : "))
 
         self.patients.append(p1)
+
+        PMSystem.file.write(str(p1.__dict__)+"\n")
 
         print("!!! Patient Added Successfully !!!\n")
 
@@ -78,7 +90,7 @@ def main():
 
         print("5 for List of Patients (Female)\n")
 
-        i=input();
+        i=input()
 
         if(i=='1'):
             pmsystem.addPatient()
@@ -93,3 +105,14 @@ def main():
 
 
 main()            
+# fileName="patients.txt"
+# # fileR=open(fileName,"r")
+
+# fileW=open(fileName,"a+")
+
+# # print(fileR.readlines())
+
+# fileW.write("hello")
+
+# # print(fileR.readlines())
+
